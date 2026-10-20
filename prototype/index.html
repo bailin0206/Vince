@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>今日 · 英语教学工作台</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#/today">
+      <span class="brand-mark">EN</span>
+      <span class="brand-text"><b>英语工作台</b><em>教学 · 听写 · 备课</em></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-item" href="#/today" data-nav="today" title="今日">
+        <svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 20v-5.5h5V20"/></svg><span>今日</span>
+      </a>
+      <a class="nav-item" href="#/lists" data-nav="lists" title="单词合集">
+        <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><span>单词合集</span>
+      </a>
+      <a class="nav-item" href="#/dictation" data-nav="dictation" title="听写中心">
+        <svg viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H5.5A1.5 1.5 0 0 1 4 17.5z"/><path d="M20 14h-3v5h1.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg><span>听写中心</span>
+      </a>
+      <a class="nav-item" href="#/errors" data-nav="errors" title="错词分析">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>错词分析</span>
+      </a>
+      <a class="nav-item" href="#/schedule" data-nav="schedule" title="课表与备课">
+        <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span>课表与备课</span>
+      </a>
+      <a class="nav-item" href="#/exams" data-nav="exams" title="成绩分析">
+        <svg viewBox="0 0 24 24"><path d="M5 20V11M12 20V5M19 20v-6"/></svg><span>成绩分析</span><span class="nav-tag">三期</span>
+      </a>
+      <a class="nav-item" href="#/settings" data-nav="settings" title="设置与备份">
+        <svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 12h3M11 12h9M4 17h9M18 17h2"/><circle cx="15.5" cy="7" r="2.2"/><circle cx="8.5" cy="12" r="2.2"/><circle cx="15.5" cy="17" r="2.2"/></svg><span>设置与备份</span>
+      </a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="student-entry">
+        <span class="pill">第二期</span>
+        <b>学生听写入口</b>
+        <span class="small muted">班级码进入，免注册</span>
+      </div>
+      <div class="backup-chip" id="backupChip"></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 id="pageTitle">今日</h1>
+        <span class="demo-badge">示例数据</span>
+      </div>
+      <div class="topbar-right">
+        <button class="btn btn-ghost btn-sm" data-app="proj" id="projBtn">投影模式</button>
+        <span class="avatar" title="李老师">李</span>
+      </div>
+    </header>
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<nav class="tabbar">
+  <a class="tab" href="#/today" data-tab="today">
+    <svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 20v-5.5h5V20"/></svg>今日
+  </a>
+  <a class="tab" href="#/lists" data-tab="lists">
+    <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 9h8M8 13h8"/></svg>词库
+  </a>
+  <a class="tab" href="#/dictation" data-tab="dictation">
+    <svg viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H5.5A1.5 1.5 0 0 1 4 17.5z"/><path d="M20 14h-3v5h1.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg>听写
+  </a>
+  <a class="tab" href="#/errors" data-tab="errors">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>错词
+  </a>
+  <button class="tab" data-app="more" style="border:0;background:none;font:inherit" aria-label="更多">
+    <svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h16"/></svg>更多
+  </button>
+</nav>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="assets/util.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/page-today.js"></script>
+<script src="assets/page-lists.js"></script>
+<script src="assets/page-dictation.js"></script>
+<script src="assets/page-errors.js"></script>
+<script src="assets/page-schedule.js"></script>
+<script src="assets/page-settings.js"></script>
+<script src="assets/page-exams.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
